@@ -31,6 +31,35 @@
 {
 
     <h3>@ViewBag.jobs.Count Result(s)</h3>
+    
+        @foreach (var job in ViewBag.jobs)
+        {
+            <table class="job-listing">
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>@ViewBag.jobs.name</td>
+                    </tr>
+                    <tr>
+                        <td>employer</td>
+                        <td>@ViewBag.jobs.employer</td>
+                    </tr>
+                    <tr>
+                        <td>location</td>
+                        <td>@ViewBag.jobs.location</td>
+                    </tr>
+                    <tr>
+                        <td>position type</td>
+                        <td>@ViewBag.jobs.positiontype</td>
+                    </tr>
+                    <tr>
+                        <td>core competency</td>
+                        <td>@ViewBag.jobs.corecompetency</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    // TODO #2 - Loop over jobs dictionary and display all job fields 
+        }
+    
+    // TODO #2 - Loop over jobs dictionary and display all job fields for
 }
