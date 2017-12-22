@@ -18,22 +18,19 @@ namespace TechJobs.Controllers
         public IActionResult Results(string searchTerm, string searchType)
         {
 
-            if (ViewBag.searchType(ViewBag.column.all) || ViewBag.searchType(""))
+            if (searchType == "all")
             {
-                ViewBag.Jobs = JobData.FindByValue(ViewBag.Value);
+                ViewBag.Jobs = JobData.FindByValue(searchTerm);
             }
             else
             {
-                ViewBag.Jobs = JobData.FindByColumnAndValue(ViewBag.Column, ViewBag.Value);
+                ViewBag.Jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
             }
-
+            ViewBag.columns = ListController.columnChoices;
             ViewBag.Title = "Search";
 
             return View("Index");
         }
-        public IActionResult Results()
-        {
-
-        }
+        
     }
 }
